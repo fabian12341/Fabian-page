@@ -61,10 +61,15 @@ export default function Skills() {
   const controls = skills.map(() => useAnimation());
 
   const resetPositions = () => {
-    initialPositions.forEach((pos, i) => {
-      controls[i].start({ x: 0, y: 0, transition: { duration: 0.8, type: "spring" } });
+    positions.forEach((pos, i) => {
+      controls[i].start({
+        x: initialPositions[i].x - pos.x,
+        y: initialPositions[i].y - pos.y,
+        transition: { duration: 0.8, type: "spring" },
+      });
     });
   };
+  
 
   return (
     <div className="min-h-screen bg-purple-50 relative overflow-hidden">

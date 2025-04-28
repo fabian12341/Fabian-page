@@ -8,6 +8,10 @@ import {
   SiPython, SiJavascript, SiC, SiGit, SiHtml5, SiCss3, SiNodedotjs, SiPostgresql, SiExpress
 } from "react-icons/si";
 
+// Definimos cantidad fija de skills
+const skillCount = 17;
+
+// Estilos de skills
 const skillStyles: Record<string, { color: string; icon: JSX.Element }> = {
   "Next.js": { color: "bg-black text-white", icon: <SiNextdotjs className="w-8 h-8" /> },
   "Tailwind": { color: "bg-sky-400 text-white", icon: <SiTailwindcss className="w-8 h-8" /> },
@@ -28,15 +32,15 @@ const skillStyles: Record<string, { color: string; icon: JSX.Element }> = {
   "PostgreSQL": { color: "bg-blue-800 text-white", icon: <SiPostgresql className="w-8 h-8" /> },
 };
 
+// Lista de skills
 const skills = [
-
   { name: "React", level: "Avanzado" }, { name: "Next.js", level: "Intermedio" },
   { name: "Tailwind", level: "Avanzado" }, { name: "Python", level: "Avanzado" },
   { name: "Flask", level: "Intermedio" }, { name: "MySQL", level: "Intermedio" },
   { name: "Render", level: "Intermedio" }, { name: "Whisper", level: "Intermedio" },
-  { name: "JavaScript", level: "Avanzado" }, { name: "C++", level: "Intermedio" }, 
-  { name: "HTML", level: "Avanzado" }, { name: "CSS", level: "Avanzado" }, 
-  { name: "Git", level: "Intermedio" }, { name: "Node.js", level: "Intermedio" }, 
+  { name: "JavaScript", level: "Avanzado" }, { name: "C++", level: "Intermedio" },
+  { name: "HTML", level: "Avanzado" }, { name: "CSS", level: "Avanzado" },
+  { name: "Git", level: "Intermedio" }, { name: "Node.js", level: "Intermedio" },
   { name: "PostgreSQL", level: "Intermedio" },
 ];
 
@@ -69,7 +73,6 @@ export default function Skills() {
       });
     });
   };
-  
 
   return (
     <div className="min-h-screen bg-purple-50 relative overflow-hidden">
@@ -87,13 +90,12 @@ export default function Skills() {
       {/* Botón Reset */}
       <div className="absolute bottom-6 right-6 z-20">
         <button
-            onClick={resetPositions}
-            className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 shadow-md"
+          onClick={resetPositions}
+          className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 shadow-md"
         >
-            Reset
+          Reset
         </button>
       </div>
-
 
       {/* Contenedor de Skills */}
       <main ref={containerRef} className="relative w-full h-[90vh] overflow-hidden flex items-center justify-center">

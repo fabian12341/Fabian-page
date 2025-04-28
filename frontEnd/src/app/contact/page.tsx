@@ -18,7 +18,7 @@ export default function Contact() {
 
       {/* Main Content */}
       <main className="flex-grow flex flex-col items-center justify-center p-10">
-        <h1 className="text-3xl font-bold text-black mb-6">Let's get in touch!</h1>
+        <h1 className="text-3xl font-bold text-black mb-6">{"Let's get in touch!!"}</h1>
 
         <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md space-y-6 text-center">
           <p className="text-lg text-gray-700 font-semibold">My socials:</p>

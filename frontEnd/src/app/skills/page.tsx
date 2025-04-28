@@ -56,9 +56,9 @@ export default function Skills() {
     return { x: startX + col * spacing, y: startY + row * spacing };
   });
 
-  const [positions, setPositions] = useState<Position[]>(initialPositions);
+  const [positions] = useState<Position[]>(initialPositions);
 
-  const controls = skills.map(() => useAnimation());
+  const controls = Array.from({ length: skills.length }, () => useAnimation());
 
   const resetPositions = () => {
     positions.forEach((pos, i) => {

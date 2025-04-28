@@ -8,9 +8,6 @@ import {
   SiPython, SiJavascript, SiC, SiGit, SiHtml5, SiCss3, SiNodedotjs, SiPostgresql, SiExpress
 } from "react-icons/si";
 
-// Definimos cantidad fija de skills
-const skillCount = 17;
-
 // Estilos de skills
 const skillStyles: Record<string, { color: string; icon: JSX.Element }> = {
   "Next.js": { color: "bg-black text-white", icon: <SiNextdotjs className="w-8 h-8" /> },
@@ -62,11 +59,12 @@ export default function Skills() {
 
   const [positions] = useState<Position[]>(initialPositions);
 
-  const controls = Array.from({ length: skills.length }, () => useAnimation());
+  // Nuevo: usamos useRef para crear los animations
+  const controlsRef = useRef(skills.map(() => useAnimation()));
 
   const resetPositions = () => {
     positions.forEach((pos, i) => {
-      controls[i].start({
+      controlsRef.current[i].start({
         x: initialPositions[i].x - pos.x,
         y: initialPositions[i].y - pos.y,
         transition: { duration: 0.8, type: "spring" },
@@ -110,7 +108,7 @@ export default function Skills() {
                 dragConstraints={containerRef}
                 dragElastic={0.8}
                 dragMomentum
-                animate={controls[i]}
+                animate={controlsRef.current[i]}
                 onMouseDown={() => {
                   const nextZ = highestZ + 1;
                   const newZs = [...zIndices];

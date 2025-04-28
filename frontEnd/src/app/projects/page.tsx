@@ -18,7 +18,8 @@ import {
   SiPython,
   SiSharp,
   SiJavascript,
-  SiPostgresql
+  SiPostgresql,
+  SiTypescript
 } from "react-icons/si";
 
 // Diccionario con color e ícono JSX
@@ -26,35 +27,35 @@ const techStyles: Record<
   string,
   { color: string; icon: JSX.Element }
 > = {
-  "Next.js": {
+  "next.js": {
     color: "bg-black text-white",
     icon: <SiNextdotjs className="w-4 h-4" />,
   },
-  "Tailwind": {
+  "tailwind": {
     color: "bg-sky-400 text-white",
     icon: <SiTailwindcss className="w-4 h-4" />,
   },
-  "Vercel": {
+  "vercel": {
     color: "bg-black text-white",
     icon: <SiVercel className="w-4 h-4" />,
   },
-  "React": {
+  "react": {
     color: "bg-blue-500 text-white",
     icon: <SiReact className="w-4 h-4" />,
   },
-  "Flask": {
+  "flask": {
     color: "bg-gray-800 text-white",
     icon: <SiFlask className="w-4 h-4" />,
   },
-  "Whisper": {
+  "whisper": {
     color: "bg-purple-600 text-white",
     icon: <SiOpenai className="w-4 h-4" />, // usando OpenAI como placeholder
   },
-  "MySQL": {
+  "mySQL": {
     color: "bg-blue-700 text-white",
     icon: <SiMysql className="w-4 h-4" />,
   },
-  "Render": {
+  "render": {
     color: "bg-indigo-600 text-white",
     icon: <SiRender className="w-4 h-4" />,
   },
@@ -66,9 +67,13 @@ const techStyles: Record<
     color: "bg-yellow-300 text-black",
     icon: <SiJavascript className="w-4 h-4" />,
   },
-  "PostgreSQL": {
+  "postgreSQL": {
     color: "bg-blue-800 text-white",  
     icon: <SiPostgresql className="w-4 h-4" />,
+  },
+  "typescript": {
+    color: "bg-blue-600 text-white",
+    icon: <SiTypescript className="w-4 h-4" />,
   },
 };
 
@@ -76,7 +81,7 @@ const projects = [
   {
     title: "Portfolio Website",
     description: "Personal site built to make myself known.",
-    tech: ["Next.js", "Tailwind", "Vercel"],
+    tech: ["next.js", "tailwind", "vercel", "typescript"],
     details: "This portfolio showcases personal projects and dynamic use of technologies to showcase skill in building web-pages.",
     github: "https://github.com/fabian12341/Fabian-page.git",
     image: "/webDevelopment.png"
@@ -84,7 +89,7 @@ const projects = [
   {
     title: "AI website to generate reports of calls",
     description: "A full-stack web page to understand calls and track improvement of employees on a company.",
-    tech: ["Next.js", "Flask", "Whisper", "MySQL", "Render", "python"],
+    tech: ["next.js", "flask", "whisper", "mySQL", "render", "python"],
     details: "Full stack web app that generates transcripts and reports of calls to improve how you talk and know how the speakers acted during the call.",
     github: "https://github.com/fabian12341/AgileAvengers.git",
     image: "/AI.jpg"
@@ -92,9 +97,9 @@ const projects = [
   {
     title: "Quiz App to help people who cant afford education",
     description: "A full-stack web page to generate quizzes and give retroactive .",
-    tech: ["Next.js", "Flask", "MySQL", "Render", "javascript", "PostgreSQL"],
-    details: "Full stack web app that generates transcripts and reports of calls to improve how you talk and know how the speakers acted during the call.",
-    github: ""
+    tech: ["next.js", "flask", "mySQL", "render", "javascript", "postgreSQL", "typescript"],
+    details: "Full stack web app with quizzes that generates retroactive analysis.",
+    github: "https://github.com/CarlosMtz1281/ProyectoK.git"
   },
 ];
 

@@ -59,12 +59,32 @@ export default function Skills() {
 
   const [positions] = useState<Position[]>(initialPositions);
 
-  // Nuevo: usamos useRef para crear los animations
-  const controlsRef = useRef(skills.map(() => useAnimation()));
+  // Hooks useAnimation UNO POR UNO
+  const control0 = useAnimation();
+  const control1 = useAnimation();
+  const control2 = useAnimation();
+  const control3 = useAnimation();
+  const control4 = useAnimation();
+  const control5 = useAnimation();
+  const control6 = useAnimation();
+  const control7 = useAnimation();
+  const control8 = useAnimation();
+  const control9 = useAnimation();
+  const control10 = useAnimation();
+  const control11 = useAnimation();
+  const control12 = useAnimation();
+  const control13 = useAnimation();
+  const control14 = useAnimation();
+
+  const controls = [
+    control0, control1, control2, control3, control4,
+    control5, control6, control7, control8, control9,
+    control10, control11, control12, control13, control14,
+  ];
 
   const resetPositions = () => {
     positions.forEach((pos, i) => {
-      controlsRef.current[i].start({
+      controls[i].start({
         x: initialPositions[i].x - pos.x,
         y: initialPositions[i].y - pos.y,
         transition: { duration: 0.8, type: "spring" },
@@ -108,7 +128,7 @@ export default function Skills() {
                 dragConstraints={containerRef}
                 dragElastic={0.8}
                 dragMomentum
-                animate={controlsRef.current[i]}
+                animate={controls[i]}
                 onMouseDown={() => {
                   const nextZ = highestZ + 1;
                   const newZs = [...zIndices];

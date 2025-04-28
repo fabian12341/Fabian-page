@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { Typewriter } from "react-simple-typewriter";
 import Image from "next/image";
-import MatrixRain from "@/components/ui/matrixRain";
+import MatrixRain from "@/app/components/ui/matrixRain";
 import { useEffect, useState } from "react";
 
 export default function Home() {

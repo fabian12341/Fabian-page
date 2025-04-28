@@ -1,8 +1,8 @@
 "use client";
 import type { JSX } from "react";
 import React, { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { Card, CardContent } from "@/app/components/ui/card";
+import { Dialog, DialogContent, DialogTitle } from "@/app/components/ui/dialog";
 import Link from "next/link";
 
 // Importa solo los íconos que usas
@@ -15,7 +15,10 @@ import {
   SiOpenai,
   SiMysql,
   SiRender,
-  SiPython
+  SiPython,
+  SiSharp,
+  SiJavascript,
+  SiPostgresql
 } from "react-icons/si";
 
 // Diccionario con color e ícono JSX
@@ -59,24 +62,39 @@ const techStyles: Record<
     color: "bg-yellow-400 text-black",
     icon: <SiPython className="w-4 h-4" />,
   },
+  "javascript": {
+    color: "bg-yellow-300 text-black",
+    icon: <SiJavascript className="w-4 h-4" />,
+  },
+  "PostgreSQL": {
+    color: "bg-blue-800 text-white",  
+    icon: <SiPostgresql className="w-4 h-4" />,
+  },
 };
 
 const projects = [
   {
     title: "Portfolio Website",
-    description: "Personal site built with Next.js, Tailwind and deployed on Vercel.",
+    description: "Personal site built to make myself known.",
     tech: ["Next.js", "Tailwind", "Vercel"],
-    details: "This portfolio showcases personal projects and blogs using static generation and Tailwind for responsive design.",
-    github: "webpage.com",
+    details: "This portfolio showcases personal projects and dynamic use of technologies to showcase skill in building web-pages.",
+    github: "https://github.com/fabian12341/Fabian-page.git",
     image: "/webDevelopment.png"
   },
   {
     title: "AI website to generate reports of calls",
-    description: "A full-stack web page to understand calls and track improvement.",
+    description: "A full-stack web page to understand calls and track improvement of employees on a company.",
     tech: ["Next.js", "Flask", "Whisper", "MySQL", "Render", "python"],
     details: "Full stack web app that generates transcripts and reports of calls to improve how you talk and know how the speakers acted during the call.",
     github: "https://github.com/fabian12341/AgileAvengers.git",
     image: "/AI.jpg"
+  },
+  {
+    title: "Quiz App to help people who cant afford education",
+    description: "A full-stack web page to generate quizzes and give retroactive .",
+    tech: ["Next.js", "Flask", "MySQL", "Render", "javascript", "PostgreSQL"],
+    details: "Full stack web app that generates transcripts and reports of calls to improve how you talk and know how the speakers acted during the call.",
+    github: ""
   },
 ];
 
@@ -149,14 +167,14 @@ export default function ProjectsPage() {
             </DialogTitle>
             <p className="mb-4 text-gray-700">{selectedProject.details}</p>
             <p className="mb-4 text-gray-700">
-              GitHub del proyecto:{" "}
+              GitHub of the proyect:{" "}
               <a
                 href={selectedProject.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 underline hover:text-blue-800"
               >
-                {selectedProject.github}
+                click here!!!
               </a>
             </p>
             <div className="flex flex-wrap gap-2">

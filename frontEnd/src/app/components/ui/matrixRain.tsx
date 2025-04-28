@@ -26,6 +26,10 @@ export default function MatrixRain() {
       [255, 0, 255],   // magenta
       [255, 255, 0],   // yellow
       [0, 128, 255],   // blue
+      [255, 128, 0],   // orange
+      [255, 0, 0],     // red
+      [128, 0, 255],   // purple
+      [0, 255, 128],   // aquamarine
     ];
 
     const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
@@ -42,7 +46,7 @@ export default function MatrixRain() {
     const draw = () => {
       const now = Date.now();
       const elapsed = now - transitionStart;
-      const t = Math.min(elapsed / 4000, 1); // transición en 4s
+      const t = Math.min(elapsed / 4000, 1);
 
       const currentColor = lerpColor(
         colorList[colorIndex],
@@ -70,11 +74,16 @@ export default function MatrixRain() {
       if (t >= 1) {
         transitionStart = now;
         colorIndex = nextColorIndex;
-        nextColorIndex = (nextColorIndex + 1) % colorList.length;
+        let newIndex = colorIndex;
+        while (newIndex === colorIndex) {
+          newIndex = Math.floor(Math.random() * colorList.length);
+        }
+
+        nextColorIndex = newIndex;
       }
     };
 
-    const interval = setInterval(draw, 50); // <- velocidad lenta original
+    const interval = setInterval(draw, 50);
     return () => clearInterval(interval);
   }, []);
 
